@@ -6,32 +6,34 @@ import { MdLocalOffer } from "react-icons/md";
 
 
 export default function Barnav() {
-  const [openOffers, setOpenOffers] = useState(true);
-  const [openNotifications, setOpenNotifications] = useState(true);
-  const [openOrders, setOpenOrders] = useState(true);
-  const [openRefunds, setOpenRefunds] = useState(true);
-  const [openReports, setOpenReports] = useState(true);
-  const [openProducts, setOpenProducts] = useState(true);
-  const [openSupport, setOpenSupport] = useState(true);
+  const [openOffers, setOpenOffers] = useState(false);
+  const [openNotifications, setOpenNotifications] = useState(false);
+  const [openOrders, setOpenOrders] = useState(false);
+  const [openRefunds, setOpenRefunds] = useState(false);
+  const [openReports, setOpenReports] = useState(false);
+  const [openProducts, setOpenProducts] = useState(false);
+  const [openSupport, setOpenSupport] = useState(false);
+  const [transactions, setTransactions] = useState(false);
+  const [PagesMedia, setPagesMedia] = useState(false);
 
   return (
-    <div className="w-64 h-screen bg-blue-900 text-white p-4 text-sm font-medium overflow-y-auto">
+    <div className="w-80 h-screen bg-green-900 text-white p-4 text-sm font-medium overflow-y-auto">
       {/* Search */}
       <div className="relative mb-4">
         <input
           type="text"
           placeholder="Search menu"
-          className="w-full p-2 pl-10 rounded-md bg-blue-800 placeholder-gray-300 text-white focus:outline-none"
+          className="w-full p-2 pl-10 rounded-md bg-green-800 placeholder-gray-300 text-white focus:outline-none"
         />
         <FaSearch className="absolute top-2.5 left-3 text-white text-sm" />
       </div>
       {/* Home */}
       <div>
-        <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+        <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
           <FaHome />
           <Link to="/Dashboard/content" className="hover:underline">Dashboard</Link>
         </button>
-        <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+        <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
           <FaCashRegister  />
           <Link to="/pos" className="hover:underline">POS</Link>
         </button>
@@ -43,7 +45,7 @@ export default function Barnav() {
       <div>
         <button
           onClick={() => setOpenOrders(!openOrders)}
-          className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <FaShoppingCart />
@@ -68,7 +70,7 @@ export default function Barnav() {
       <div>
         <button 
         onClick={() => setOpenRefunds(!openRefunds)} 
-        className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <FaDollarSign />
@@ -92,7 +94,7 @@ export default function Barnav() {
       <div>
         <button
           onClick={() => setOpenOffers(!openOffers)}
-          className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <MdLocalOffer />
@@ -102,8 +104,8 @@ export default function Barnav() {
         </button>
         {openOffers && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li>Sub Categories</li>
-            <li>Sub Sub Categories</li>
+            {/* <li>Sub Categories</li> */}
+            {/* <li>Sub Sub Categories</li> */}
             <li><Link to="/Category/Catrgory" className="hover:underline">Categories</Link></li>
             {/* <li><Link to="/refunds/approved" className="hover:underline">Appproved</Link></li>
             <li><Link to="/refunds/refunded" className="hover:underline">Refunded</Link></li> */}
@@ -114,7 +116,7 @@ export default function Barnav() {
       <div className="mt-2">
         <button
           onClick={() => setOpenNotifications(!openNotifications)}
-          className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <MdLocalOffer />
@@ -124,27 +126,27 @@ export default function Barnav() {
         </button>
         {openNotifications && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li>Add new</li>
-            <li>List</li>
+            <li><Link to="/BrandSetup/BrandSetup" className="hover:underline">Add new</Link></li>
+            <li><Link to="/BrandSetup/BrandList" className="hover:underline">List</Link></li>
           </ul>
         )}
       </div>
 
-      <Link
+      {/* <Link
         to="/ProductGallery/ProductGallery"
-        className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
       >
         <span className="flex items-center gap-2">
             <FaTicketAlt />
             Product Gallery
         </span>
-      </Link>
+      </Link> */}
 
 
       <div className="mt-2">
         <button
           onClick={() => setOpenReports(!openReports)}
-          className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <MdLocalOffer />
@@ -163,7 +165,7 @@ export default function Barnav() {
       <div className="mt-2">
         <button
           onClick={() => setOpenProducts(!openProducts)}
-          className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <MdLocalOffer />
@@ -179,22 +181,22 @@ export default function Barnav() {
         )}
       </div>
 
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         <Link to="/Product Gallery/ProductGallery" className="hover:underline">Product gallery</Link>
       </button>
 
       {/* Promotion management */}
-      <p className="text-xs text-gray-400 mt-6 mb-2">PROMOTION MANAGEMENT</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      {/* <p className="text-xs text-gray-400 mt-6 mb-2">PROMOTION MANAGEMENT</p>
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaInbox />
         Banner Setup
-      </button>
+      </button> */}
 
         <div className="mt-2">
         <button
           onClick={() => setOpenReports(!openReports)}
-          className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <MdLocalOffer />
@@ -213,7 +215,7 @@ export default function Barnav() {
       <div className="mt-2">
         <button
           onClick={() => setOpenSupport(!openSupport)}
-          className="flex items-center justify-between w-full px-2 py-2 hover:bg-blue-800 rounded"
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <MdLocalOffer />
@@ -229,22 +231,27 @@ export default function Barnav() {
         )}
       </div>
 
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Announcement
       </button>
 
       {/* HELP & SUPPORT */}
       <p className="text-xs text-gray-400 mt-6">HELP & SUPPORT</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Inbox
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <Link
+        to="/Chatting/Inbox"
+        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+      >
+        <span className="flex items-center gap-2">
+            <FaTicketAlt />
+            Inbox
+        </span>
+      </Link>
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Messages
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Support Ticket
       </button>
@@ -252,125 +259,117 @@ export default function Barnav() {
 
       {/* HELP & SUPPORT */}
       <p className="text-xs text-gray-400 mt-6 uppercase">Reports & Analysis</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      {/* <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
         <FaTicketAlt />
         Sales & Transaction Report
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      </button> */}
+      <div>
+        <button 
+        onClick={() => setTransactions(!transactions)} 
+        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        >
+          <span className="flex items-center gap-2">
+            <FaDollarSign />
+            Sales & Transaction Report
+          </span>
+          {transactions ? <FaChevronDown /> : <FaChevronRight />}
+        </button>
+        {transactions && (
+          <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
+            <li><Link to="/" className="hover:underline">Earning Reports</Link></li>
+            <li><Link to="/" className="hover:underline">Inhouse Sales</Link></li>
+            <li><Link to="/" className="hover:underline">Verdor Sales</Link></li>
+            <li><Link to="/Transactions/Transactions" className="hover:underline">Transaction Report</Link></li>
+          </ul>
+        )}
+      </div>
+
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Product Report
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Order Report
-      </button>
+      <Link
+        to="/OrderReport/OrderReport"
+        className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
+      >
+        <span className="flex items-center gap-2">
+            <FaTicketAlt />
+            Order Report
+        </span>
+      </Link>
 
       {/* HELP & SUPPORT */}
-      <p className="text-xs text-gray-400 mt-6 uppercase">Blog management</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      {/* <p className="text-xs text-gray-400 mt-6 uppercase">Blog management</p>
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Blog
-      </button>
+      </button> */}
 
       {/* User management */}
       <p className="text-xs text-gray-400 mt-6 uppercase">User management</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Customers
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Vendors
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Delivery Men
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Employees
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      {/* <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Subscribers
-      </button>
+      </button> */}
 
       {/* Business Settings */}
       <p className="text-xs text-gray-400 mt-6 uppercase">Business Settings</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Business Setup
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Inhouse Shop
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
+      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         SEO Settings
       </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Priority Setup
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Pages & Media
-      </button>
-
-      {/* System Settings */}
-      <p className="text-xs text-gray-400 mt-6 uppercase">System Settings</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        System Setup
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Login Settings
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Email Template
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Gallery
-      </button>
-
-      {/* 3rd Party Setup */}
-      <p className="text-xs text-gray-400 mt-6 uppercase">3rd Party Setup</p>
-            <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Payment Methods
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Firebase
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Marketing Tools
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Other Configuration
-      </button>
-
-      {/* Themes & Addons */}
-      <p className="text-xs text-gray-400 mt-6 uppercase">Themes & Addons</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Theme Setup
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        System Addons
-      </button>
-
-
-
-
-
+      <Link
+        to="/PrioritySetup/PrioritySetup"
+        className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
+      >
+        <span className="flex items-center gap-2">
+            <FaTicketAlt />
+            Priority Setup
+        </span>
+      </Link>
+       <div>
+        <button 
+        onClick={() => setPagesMedia(!PagesMedia)} 
+        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        >
+          <span className="flex items-center gap-2">
+            <FaDollarSign />
+            Pages & Media
+          </span>
+          {PagesMedia ? <FaChevronDown /> : <FaChevronRight />}
+        </button>
+        {PagesMedia && (
+          <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
+            <li><Link to="/Pages&Media/PageMediaSetup" className="hover:underline">Bussiness Pages</Link></li>
+            <li><Link to="/Pages&Media/SocialMediaLinks" className="hover:underline">Social Media Links</Link></li>
+            <li><Link to="/Pages&Media/Voerdor/Header" className="hover:underline">Venor Rogistration</Link></li>
+          </ul>
+        )}
+      </div>
     </div>
   );
 }

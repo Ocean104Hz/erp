@@ -20,10 +20,25 @@ import Approved from '../components/Refund/Appproved';
 import Pending2 from '../components/Refund/Pending';
 import Refunded from '../components/Refund/Refunded';
 import Rejected from '../components/Refund/Rejected';
-
+import Transactions from '../components/Transaction/Transactions';
 import ProductList from '../components/InHouseProducts/ProductList';
-
-
+import Reports from '../components/Transaction/Reports';
+import Refund from '../components/Transaction/Refund';
+import OrderReport from '../components/OrderReport/OrderReport';
+import PageMediaSetup from '../components/Pages&Media/PageMediaSetup';
+import FAQPage from '../components/Pages&Media/FAQPage';
+import OurCommitments from '../components/Pages&Media/OurCommitments';
+import Inbox from '../components/Chatting/Inbox';
+import BrandSetup from '../components/BrandSetup/BrandSetup';
+import BrandList from '../components/BrandSetup/BrandList';
+import SocialMediaLinkSetup from '../components/Pages&Media/SocialMediaLinks';
+import Vendor from '../components/Pages&Media/Voerdor/Vendor';
+import WhySell from '../components/Pages&Media/Voerdor/WhySell';
+import Business from '../components/Pages&Media/Voerdor/Business';
+import DownloadApp from '../components/Pages&Media/Voerdor/DownloadApp';
+import FAQ from '../components/Pages&Media/Voerdor/FAQ';
+import Header2 from '../components/Pages&Media/Voerdor/Header';
+import PrioritySetup from '../components/PrioritySetup/PrioritySetup';
 // import NotFound from './NotFound';
 
 export default function Index() {
@@ -53,7 +68,25 @@ export default function Index() {
             <Route path="/Dashboard/content" element={<Dashboard />} />
             <Route path="/Category/Catrgory" element={<Category />} />
             <Route path="/ProductGallery/ProductGallery" element={<ProductGallery />} />
-
+            <Route path="/Transactions/Transactions" element={<Transactions />} />
+            <Route path="/Transactions/Reports" element={<Reports />} />
+            <Route path="/Transactions/Refund" element={<Refund />} />   
+            <Route path="/OrderReport/OrderReport" element={<OrderReport />} />
+            <Route path="/Pages&Media/PageMediaSetup" element={<PageMediaSetup />} />
+            <Route path="/Pages&Media/FAQPage" element={<FAQPage />} />
+            <Route path="/Pages&Media/OurCommitments" element={<OurCommitments />} />
+            <Route path="/Chatting/Inbox" element={<Inbox />} />
+            <Route path="/BrandSetup/BrandSetup" element={<BrandSetup />} />
+            <Route path="/BrandSetup/BrandList" element={<BrandList />} />
+            <Route path="/Pages&Media/SocialMediaLinks" element={<SocialMediaLinkSetup />} />
+            <Route path="/Pages&Media/Voerdor/Vendor" element={<Vendor />} />
+            <Route path="/Pages&Media/Voerdor/WhySell" element={<WhySell />} />
+            <Route path="/Pages&Media/Voerdor/Business" element={<Business />} />
+            <Route path="/Pages&Media/Voerdor/DownloadApp" element={<DownloadApp />} />
+            <Route path="/Pages&Media/Voerdor/FAQ" element={<FAQ />} />
+            <Route path="/Pages&Media/Voerdor/Header" element={<Header2 />} />
+            <Route path="/PrioritySetup/PrioritySetup" element={<PrioritySetup />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </div>
       </div>
