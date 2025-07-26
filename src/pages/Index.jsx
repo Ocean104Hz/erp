@@ -39,7 +39,23 @@ import DownloadApp from '../components/Pages&Media/Voerdor/DownloadApp';
 import FAQ from '../components/Pages&Media/Voerdor/FAQ';
 import Header2 from '../components/Pages&Media/Voerdor/Header';
 import PrioritySetup from '../components/PrioritySetup/PrioritySetup';
-// import NotFound from './NotFound';
+import WebmasterTools from '../components/SEOSettings/WebmasterTools';
+import Robots from '../components/SEOSettings/Robots';
+import Sitemap from '../components/SEOSettings/Sitemap';
+import RobotsMeta from '../components/SEOSettings/RobotsMeta';
+import Logs from '../components/SEOSettings/Logs';
+import ShopSetting  from  '../components/InhouseShop/ShopSetting'
+import Others from '../components/InhouseShop/Others'
+import ProductReport from '../components/ProductReport/AllProducts'
+import ProductStock from '../components/ProductReport/ProductStock'
+import WishListed from '../components/ProductReport/WishListed'
+import CustomerList from '../components/Customers/CustomerList'
+import CustomerReviews from '../components/Customers/CustomerReviews'
+import LoyaltyPoints from '../components/Customers/LoyaltyPoints'
+import Wallet from '../components/Customers/Wallet'
+import WalletBonus from '../components/Customers/WalletBonus'
+
+// import NotFound from './NotFound' WalletBonus;
 
 export default function Index() {
   return (
@@ -86,6 +102,21 @@ export default function Index() {
             <Route path="/Pages&Media/Voerdor/FAQ" element={<FAQ />} />
             <Route path="/Pages&Media/Voerdor/Header" element={<Header2 />} />
             <Route path="/PrioritySetup/PrioritySetup" element={<PrioritySetup />} />
+            <Route path="/SEOSettings/WebmasterTools" element={<WebmasterTools />} />
+            <Route path="/SEOSettings/Robots" element={<Robots />} />
+            <Route path='/SEOSettings/Sitemap' element={<Sitemap/>}/>
+            <Route path='/SEOSettings/RobotsMeta' element={<RobotsMeta/>}/>
+            <Route path='/SEOSettings/Logs' element={<Logs/>}/>
+            <Route path='/InhouseShop/ShopSetting' element={<ShopSetting/>}/>
+            <Route path='/InhouseShop/Others' element={<Others/>}/>
+            <Route path='/ProductReport/AllProducts' element={<ProductReport/>}/>
+            <Route path='/ProductReport/ProductStock' element={<ProductStock/>}/>
+            <Route path='/ProductReport/WishListed' element={<WishListed/>}/>
+            <Route path='/Customers/CustomerList' element={<CustomerList/>}/>
+            <Route path='/Customers/CustomerReviews' element={<CustomerReviews/>}/>
+            <Route path='/Customers/LoyaltyPoints' element={<LoyaltyPoints/>}/>
+            <Route path='/Customers/Wallet' element={<Wallet/>}/>
+            <Route path='/Customers/WalletBonus' element={<WalletBonus/>}/>
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </div>

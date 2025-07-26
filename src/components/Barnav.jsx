@@ -284,10 +284,15 @@ export default function Barnav() {
         )}
       </div>
 
-      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Product Report
-      </button>
+      <Link
+        to="/ProductReport/AllProducts"
+        className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
+      >
+        <span className="flex items-center gap-2">
+            <FaTicketAlt />
+            Product Report
+        </span>
+      </Link>
       <Link
         to="/OrderReport/OrderReport"
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
@@ -307,10 +312,47 @@ export default function Barnav() {
 
       {/* User management */}
       <p className="text-xs text-gray-400 mt-6 uppercase">User management</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Customers
-      </button>
+      <div>
+        <button 
+        onClick={() => setPagesMedia(!PagesMedia)} 
+        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        >
+          <span className="flex items-center gap-2">
+            <FaDollarSign />
+            Customers
+          </span>
+          {PagesMedia ? <FaChevronDown /> : <FaChevronRight />}
+        </button>
+        {PagesMedia && (
+          <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
+            <li><Link to="/Customers/CustomerList" className="hover:underline">Customer List</Link></li>
+            <li><Link to="/Customers/CustomerReviews" className="hover:underline">Customer Reviews</Link></li>
+            <li><Link to="/Customers/Wallet" className="hover:underline">Wallet</Link></li>
+            <li><Link to="/Customers/WalletBonus" className="hover:underline">Wallet Bonus</Link></li>
+            <li><Link to="/Customers/LoyaltyPoints" className="hover:underline">Loyalty Points</Link></li>
+          </ul>
+        )}
+      </div>
+      <div>
+        <button 
+        onClick={() => setPagesMedia(!PagesMedia)} 
+        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        >
+          <span className="flex items-center gap-2">
+            <FaDollarSign />
+            Vendors
+          </span>
+          {PagesMedia ? <FaChevronDown /> : <FaChevronRight />}
+        </button>
+        {PagesMedia && (
+          <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
+            <li><Link to="/Customers/CustomerList" className="hover:underline">Add New Vendor</Link></li>
+            <li><Link to="/Customers/CustomerReviews" className="hover:underline">Vendor List</Link></li>
+            <li><Link to="/Customers/Wallet" className="hover:underline">Withdraws</Link></li>
+            <li><Link to="/Customers/WalletBonus" className="hover:underline">Withdraws  Methods</Link></li>
+          </ul>
+        )}
+      </div>
       <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
         Vendors
@@ -330,18 +372,33 @@ export default function Barnav() {
 
       {/* Business Settings */}
       <p className="text-xs text-gray-400 mt-6 uppercase">Business Settings</p>
-      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Business Setup
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Inhouse Shop
-      </button>
-      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        SEO Settings
-      </button>
+      <Link
+        to="/SEOSettings/WebmasterTools"
+        className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
+      >
+        <span className="flex items-center gap-2">
+            <FaTicketAlt />
+            Business Setup
+        </span>
+      </Link>
+      <Link
+        to="/InhouseShop/ShopSetting"
+        className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
+      >
+        <span className="flex items-center gap-2">
+            <FaTicketAlt />
+            Inhouse Shop
+        </span>
+      </Link>
+      <Link
+        to="/SEOSettings/WebmasterTools"
+        className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
+      >
+        <span className="flex items-center gap-2">
+            <FaTicketAlt />
+            SEO Settings
+        </span>
+      </Link>
       <Link
         to="/PrioritySetup/PrioritySetup"
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
