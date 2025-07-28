@@ -1,6 +1,8 @@
 // src/pages/Index.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Barnav from '../components/Barnav';
+import EarningChar from '../components/EarningChar'
+import NotFound from '../pages/NotFound'
 // import Navbar from '../components/Navbar';
 import Home from '../components/Home';
 import Pos from '../components/Pos';
@@ -54,6 +56,10 @@ import CustomerReviews from '../components/Customers/CustomerReviews'
 import LoyaltyPoints from '../components/Customers/LoyaltyPoints'
 import Wallet from '../components/Customers/Wallet'
 import WalletBonus from '../components/Customers/WalletBonus'
+import EarningReports from '../components/Transaction/SalesTransaction/EarningReports'
+import InhouseSales from '../components/Transaction/SalesTransaction/InhouseSales'
+import VerdorSales from '../components/Transaction/SalesTransaction/VerdorSales'
+import VendorEarning from '../components/Transaction/SalesTransaction/VendorEarning'
 
 // import NotFound from './NotFound' WalletBonus;
 
@@ -117,7 +123,12 @@ export default function Index() {
             <Route path='/Customers/LoyaltyPoints' element={<LoyaltyPoints/>}/>
             <Route path='/Customers/Wallet' element={<Wallet/>}/>
             <Route path='/Customers/WalletBonus' element={<WalletBonus/>}/>
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path='/Transaction/SalesTransaction/EarningReports' element={<EarningReports/>}/>
+            <Route path='/Transaction/SalesTransaction/InhouseSales' element={<InhouseSales/>}/>
+            <Route path='/Transaction/SalesTransaction/VerdorSales' element={<VerdorSales/>}/>
+            <Route path='/Transaction/SalesTransaction/VendorEarning' element={<VendorEarning/>}/>
+            <Route path='/EarningChar' element={<EarningChar/>}/>    
+            <Route path="/pages/NotFound" element={<NotFound />} />
           </Routes>
         </div>
       </div>

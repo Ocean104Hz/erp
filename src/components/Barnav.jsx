@@ -1,9 +1,21 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-import { FaSearch, FaDollarSign, FaChevronDown, FaChevronRight, FaBullhorn, FaBell, FaInbox, FaEnvelope, FaTicketAlt, FaShoppingCart, FaHome, FaCashRegister  } from "react-icons/fa";
-import { House, Calculator  } from 'lucide-react';
+import { Link } from "react-router-dom";
+import {
+  FaSearch,
+  FaDollarSign,
+  FaChevronDown,
+  FaChevronRight,
+  FaBullhorn,
+  FaBell,
+  FaInbox,
+  FaEnvelope,
+  FaTicketAlt,
+  FaShoppingCart,
+  FaHome,
+  FaCashRegister,
+} from "react-icons/fa";
+import { House, Calculator } from "lucide-react";
 import { MdLocalOffer } from "react-icons/md";
-
 
 export default function Barnav() {
   const [openOffers, setOpenOffers] = useState(false);
@@ -15,6 +27,7 @@ export default function Barnav() {
   const [openSupport, setOpenSupport] = useState(false);
   const [transactions, setTransactions] = useState(false);
   const [PagesMedia, setPagesMedia] = useState(false);
+  const [Offers, setOffers] = useState(false);
 
   return (
     <div className="w-80 h-screen bg-green-900 text-white p-4 text-sm font-medium overflow-y-auto">
@@ -31,11 +44,15 @@ export default function Barnav() {
       <div>
         <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
           <FaHome />
-          <Link to="/Dashboard/content" className="hover:underline">Dashboard</Link>
+          <Link to="/Dashboard/content" className="hover:underline">
+            Dashboard
+          </Link>
         </button>
         <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
-          <FaCashRegister  />
-          <Link to="/pos" className="hover:underline">POS</Link>
+          <FaCashRegister />
+          <Link to="/pos" className="hover:underline">
+            POS
+          </Link>
         </button>
       </div>
 
@@ -55,22 +72,58 @@ export default function Barnav() {
         </button>
         {openOrders && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/" className="hover:underline">All</Link></li>
-            <li><Link to="/pending" className="hover:underline">Pending</Link></li>
-            <li><Link to="/confirmed" className="hover:underline">Confirmed</Link></li>
-            <li><Link to="/packaging" className="hover:underline">Packaging</Link></li>
-            <li><Link to="/out-for-delivery" className="hover:underline">Out for Delivery</Link></li>
-            <li><Link to="/delivered" className="hover:underline">Delivered</Link></li>
-            <li><Link to="/returned" className="hover:underline">Returned</Link></li>
-            <li><Link to="/failed-to-deliver" className="hover:underline">Failed to Deliver</Link></li>
-            <li><Link to="/canceled" className="hover:underline">Canceled</Link></li>
+            <li>
+              <Link to="/" className="hover:underline">
+                All
+              </Link>
+            </li>
+            <li>
+              <Link to="/pending" className="hover:underline">
+                Pending
+              </Link>
+            </li>
+            <li>
+              <Link to="/confirmed" className="hover:underline">
+                Confirmed
+              </Link>
+            </li>
+            <li>
+              <Link to="/packaging" className="hover:underline">
+                Packaging
+              </Link>
+            </li>
+            <li>
+              <Link to="/out-for-delivery" className="hover:underline">
+                Out for Delivery
+              </Link>
+            </li>
+            <li>
+              <Link to="/delivered" className="hover:underline">
+                Delivered
+              </Link>
+            </li>
+            <li>
+              <Link to="/returned" className="hover:underline">
+                Returned
+              </Link>
+            </li>
+            <li>
+              <Link to="/failed-to-deliver" className="hover:underline">
+                Failed to Deliver
+              </Link>
+            </li>
+            <li>
+              <Link to="/canceled" className="hover:underline">
+                Canceled
+              </Link>
+            </li>
           </ul>
         )}
       </div>
       <div>
-        <button 
-        onClick={() => setOpenRefunds(!openRefunds)} 
-        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        <button
+          onClick={() => setOpenRefunds(!openRefunds)}
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <FaDollarSign />
@@ -80,10 +133,26 @@ export default function Barnav() {
         </button>
         {openRefunds && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/refunds/pending" className="hover:underline">Pending</Link></li>
-            <li><Link to="/refunds/approved" className="hover:underline">Appproved</Link></li>
-            <li><Link to="/refunds/refunded" className="hover:underline">Refunded</Link></li>
-            <li><Link to="/refunds/rejected" className="hover:underline">Rejected</Link></li>
+            <li>
+              <Link to="/refunds/pending" className="hover:underline">
+                Pending
+              </Link>
+            </li>
+            <li>
+              <Link to="/refunds/approved" className="hover:underline">
+                Appproved
+              </Link>
+            </li>
+            <li>
+              <Link to="/refunds/refunded" className="hover:underline">
+                Refunded
+              </Link>
+            </li>
+            <li>
+              <Link to="/refunds/rejected" className="hover:underline">
+                Rejected
+              </Link>
+            </li>
           </ul>
         )}
       </div>
@@ -106,7 +175,11 @@ export default function Barnav() {
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
             {/* <li>Sub Categories</li> */}
             {/* <li>Sub Sub Categories</li> */}
-            <li><Link to="/Category/Catrgory" className="hover:underline">Categories</Link></li>
+            <li>
+              <Link to="/Category/Catrgory" className="hover:underline">
+                Categories
+              </Link>
+            </li>
             {/* <li><Link to="/refunds/approved" className="hover:underline">Appproved</Link></li>
             <li><Link to="/refunds/refunded" className="hover:underline">Refunded</Link></li> */}
           </ul>
@@ -126,22 +199,29 @@ export default function Barnav() {
         </button>
         {openNotifications && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/BrandSetup/BrandSetup" className="hover:underline">Add new</Link></li>
-            <li><Link to="/BrandSetup/BrandList" className="hover:underline">List</Link></li>
+            <li>
+              <Link to="/BrandSetup/BrandSetup" className="hover:underline">
+                Add new
+              </Link>
+            </li>
+            <li>
+              <Link to="/BrandSetup/BrandList" className="hover:underline">
+                List
+              </Link>
+            </li>
           </ul>
         )}
       </div>
 
-      {/* <Link
-        to="/ProductGallery/ProductGallery"
+      <Link
+        to="/pages/NotFound"
         className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            Product Gallery
+          <FaTicketAlt />
+          Product Attribute Setup
         </span>
-      </Link> */}
-
+      </Link>
 
       <div className="mt-2">
         <button
@@ -156,8 +236,26 @@ export default function Barnav() {
         </button>
         {openReports && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/InHouseProducts/ProductList" className="hover:underline">Product List</Link></li>
-            <li>List</li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Product List
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Add New Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Bulk import
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Request Restock List
+              </Link>
+            </li>
           </ul>
         )}
       </div>
@@ -175,15 +273,30 @@ export default function Barnav() {
         </button>
         {openProducts && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li>Add new</li>
-            <li>List</li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Vendor Product List
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Approved Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Denied Product
+              </Link>
+            </li>
           </ul>
         )}
       </div>
 
       <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
         <FaTicketAlt />
-        <Link to="/Product Gallery/ProductGallery" className="hover:underline">Product gallery</Link>
+        <Link to="/ProductGallery/ProductGallery" className="hover:underline">
+          Product gallery
+        </Link>
       </button>
 
       {/* Promotion management */}
@@ -193,21 +306,44 @@ export default function Barnav() {
         Banner Setup
       </button> */}
 
-        <div className="mt-2">
+      <div className="mt-2">
         <button
-          onClick={() => setOpenReports(!openReports)}
+          onClick={() => setOffers(!Offers)}
           className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <MdLocalOffer />
             Offers & Deals
           </span>
-          {openReports ? <FaChevronDown /> : <FaChevronRight />}
+          {Offers ? <FaChevronDown /> : <FaChevronRight />}
         </button>
-        {openReports && (
+        {Offers && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li>Add new</li>
-            <li>List</li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Coupon
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Flash Deals
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Deal of the day
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Featured Deal
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Clearance Sale
+              </Link>
+            </li>
           </ul>
         )}
       </div>
@@ -225,16 +361,28 @@ export default function Barnav() {
         </button>
         {openSupport && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li>Add new</li>
-            <li>List</li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Send Notification
+              </Link>
+            </li>
+            <li>
+              <Link to="/pages/NotFound" className="hover:underline">
+                Push Notifications Setup
+              </Link>
+            </li>
           </ul>
         )}
       </div>
-
-      <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
-        <FaTicketAlt />
-        Announcement
-      </button>
+            <Link
+        to="/pages/NotFound"
+        className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
+      >
+        <span className="flex items-center gap-2">
+          <FaTicketAlt />
+          Announcement
+        </span>
+      </Link>
 
       {/* HELP & SUPPORT */}
       <p className="text-xs text-gray-400 mt-6">HELP & SUPPORT</p>
@@ -243,8 +391,8 @@ export default function Barnav() {
         className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            Inbox
+          <FaTicketAlt />
+          Inbox
         </span>
       </Link>
       <button className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded">
@@ -256,7 +404,6 @@ export default function Barnav() {
         Support Ticket
       </button>
 
-
       {/* HELP & SUPPORT */}
       <p className="text-xs text-gray-400 mt-6 uppercase">Reports & Analysis</p>
       {/* <button className="flex items-center gap-2 py-2 hover:bg-blue-800 w-full px-2 rounded">
@@ -264,9 +411,9 @@ export default function Barnav() {
         Sales & Transaction Report
       </button> */}
       <div>
-        <button 
-        onClick={() => setTransactions(!transactions)} 
-        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        <button
+          onClick={() => setTransactions(!transactions)}
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <FaDollarSign />
@@ -276,10 +423,26 @@ export default function Barnav() {
         </button>
         {transactions && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/" className="hover:underline">Earning Reports</Link></li>
-            <li><Link to="/" className="hover:underline">Inhouse Sales</Link></li>
-            <li><Link to="/" className="hover:underline">Verdor Sales</Link></li>
-            <li><Link to="/Transactions/Transactions" className="hover:underline">Transaction Report</Link></li>
+            <li>
+              <Link to="/Transaction/SalesTransaction/EarningReports" className="hover:underline">
+                Earning Reports
+              </Link>
+            </li>
+            <li>
+              <Link to="/Transaction/SalesTransaction/InhouseSales" className="hover:underline">
+                Inhouse Sales
+              </Link>
+            </li>
+            <li>
+              <Link to="/Transaction/SalesTransaction/VerdorSales" className="hover:underline">
+                Verdor Sales
+              </Link>
+            </li>
+            <li>
+              <Link to="/Transactions/Transactions" className="hover:underline">
+                Transaction Report
+              </Link>
+            </li>
           </ul>
         )}
       </div>
@@ -289,8 +452,8 @@ export default function Barnav() {
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            Product Report
+          <FaTicketAlt />
+          Product Report
         </span>
       </Link>
       <Link
@@ -298,8 +461,8 @@ export default function Barnav() {
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            Order Report
+          <FaTicketAlt />
+          Order Report
         </span>
       </Link>
 
@@ -313,9 +476,9 @@ export default function Barnav() {
       {/* User management */}
       <p className="text-xs text-gray-400 mt-6 uppercase">User management</p>
       <div>
-        <button 
-        onClick={() => setPagesMedia(!PagesMedia)} 
-        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        <button
+          onClick={() => setPagesMedia(!PagesMedia)}
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <FaDollarSign />
@@ -325,18 +488,38 @@ export default function Barnav() {
         </button>
         {PagesMedia && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/Customers/CustomerList" className="hover:underline">Customer List</Link></li>
-            <li><Link to="/Customers/CustomerReviews" className="hover:underline">Customer Reviews</Link></li>
-            <li><Link to="/Customers/Wallet" className="hover:underline">Wallet</Link></li>
-            <li><Link to="/Customers/WalletBonus" className="hover:underline">Wallet Bonus</Link></li>
-            <li><Link to="/Customers/LoyaltyPoints" className="hover:underline">Loyalty Points</Link></li>
+            <li>
+              <Link to="/Customers/CustomerList" className="hover:underline">
+                Customer List
+              </Link>
+            </li>
+            <li>
+              <Link to="/Customers/CustomerReviews" className="hover:underline">
+                Customer Reviews
+              </Link>
+            </li>
+            <li>
+              <Link to="/Customers/Wallet" className="hover:underline">
+                Wallet
+              </Link>
+            </li>
+            <li>
+              <Link to="/Customers/WalletBonus" className="hover:underline">
+                Wallet Bonus
+              </Link>
+            </li>
+            <li>
+              <Link to="/Customers/LoyaltyPoints" className="hover:underline">
+                Loyalty Points
+              </Link>
+            </li>
           </ul>
         )}
       </div>
       <div>
-        <button 
-        onClick={() => setPagesMedia(!PagesMedia)} 
-        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+        <button
+          onClick={() => setPagesMedia(!PagesMedia)}
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <FaDollarSign />
@@ -346,10 +529,26 @@ export default function Barnav() {
         </button>
         {PagesMedia && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/Customers/CustomerList" className="hover:underline">Add New Vendor</Link></li>
-            <li><Link to="/Customers/CustomerReviews" className="hover:underline">Vendor List</Link></li>
-            <li><Link to="/Customers/Wallet" className="hover:underline">Withdraws</Link></li>
-            <li><Link to="/Customers/WalletBonus" className="hover:underline">Withdraws  Methods</Link></li>
+            <li>
+              <Link to="/Customers/CustomerList" className="hover:underline">
+                Add New Vendor
+              </Link>
+            </li>
+            <li>
+              <Link to="/Customers/CustomerReviews" className="hover:underline">
+                Vendor List
+              </Link>
+            </li>
+            <li>
+              <Link to="/Customers/Wallet" className="hover:underline">
+                Withdraws
+              </Link>
+            </li>
+            <li>
+              <Link to="/Customers/WalletBonus" className="hover:underline">
+                Withdraws Methods
+              </Link>
+            </li>
           </ul>
         )}
       </div>
@@ -377,8 +576,8 @@ export default function Barnav() {
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            Business Setup
+          <FaTicketAlt />
+          Business Setup
         </span>
       </Link>
       <Link
@@ -386,8 +585,8 @@ export default function Barnav() {
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            Inhouse Shop
+          <FaTicketAlt />
+          Inhouse Shop
         </span>
       </Link>
       <Link
@@ -395,8 +594,8 @@ export default function Barnav() {
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            SEO Settings
+          <FaTicketAlt />
+          SEO Settings
         </span>
       </Link>
       <Link
@@ -404,14 +603,14 @@ export default function Barnav() {
         className="flex items-center gap-2 py-2 hover:bg-green-800 w-full px-2 rounded"
       >
         <span className="flex items-center gap-2">
-            <FaTicketAlt />
-            Priority Setup
+          <FaTicketAlt />
+          Priority Setup
         </span>
       </Link>
-       <div>
-        <button 
-        onClick={() => setPagesMedia(!PagesMedia)} 
-        className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
+      <div>
+        <button
+          onClick={() => setPagesMedia(!PagesMedia)}
+          className="flex items-center justify-between w-full px-2 py-2 hover:bg-green-800 rounded"
         >
           <span className="flex items-center gap-2">
             <FaDollarSign />
@@ -421,9 +620,30 @@ export default function Barnav() {
         </button>
         {PagesMedia && (
           <ul className="ml-6 text-sm text-gray-300 space-y-1 mt-1">
-            <li><Link to="/Pages&Media/PageMediaSetup" className="hover:underline">Bussiness Pages</Link></li>
-            <li><Link to="/Pages&Media/SocialMediaLinks" className="hover:underline">Social Media Links</Link></li>
-            <li><Link to="/Pages&Media/Voerdor/Header" className="hover:underline">Venor Rogistration</Link></li>
+            <li>
+              <Link
+                to="/Pages&Media/PageMediaSetup"
+                className="hover:underline"
+              >
+                Bussiness Pages
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/Pages&Media/SocialMediaLinks"
+                className="hover:underline"
+              >
+                Social Media Links
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/Pages&Media/Voerdor/Header"
+                className="hover:underline"
+              >
+                Venor Rogistration
+              </Link>
+            </li>
           </ul>
         )}
       </div>
