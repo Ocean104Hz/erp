@@ -4,6 +4,7 @@ import { FaFileExcel } from "react-icons/fa";
 import { MdRunningWithErrors } from "react-icons/md";
 import { AiFillProduct } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import EarningChar from "../EarningChar";
 
 export default function AllProducts() {
   return (
@@ -131,11 +132,11 @@ export default function AllProducts() {
           </div>
         </div>
 
-        <div className="flex-1 w-1/3 p-6 shadow-md border rounded-md">
+        <div className="flex-1 w-1/3 p-6 shadow-md rounded-md bg-white">
           <h2 className="text-md font-semibold mb-2">Product Statistics</h2>
           {/* กราฟจำลอง */}
-          <div className="h-64 bg-gray-50 border-dashed border-2 border-gray-300 flex items-center justify-center text-gray-400">
-            <p>Chart Placeholder</p>
+          <div className="h-110 bg-white border-gray-300 flex items-center justify-center text-gray-400">
+            <EarningChar/>
           </div>
         </div>
       </div>

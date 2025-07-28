@@ -24,6 +24,9 @@ import Refunded from '../components/Refund/Refunded';
 import Rejected from '../components/Refund/Rejected';
 import Transactions from '../components/Transaction/Transactions';
 import ProductList from '../components/InHouseProducts/ProductList';
+import Bulkimport from '../components/InHouseProducts/Bulkimport';
+import RequestRestockList from '../components/InHouseProducts/RequestRestockList';
+import AddNewProduct from '../components/InHouseProducts/AddNewProduct';
 import Reports from '../components/Transaction/Reports';
 import Refund from '../components/Transaction/Refund';
 import OrderReport from '../components/OrderReport/OrderReport';
@@ -60,6 +63,26 @@ import EarningReports from '../components/Transaction/SalesTransaction/EarningRe
 import InhouseSales from '../components/Transaction/SalesTransaction/InhouseSales'
 import VerdorSales from '../components/Transaction/SalesTransaction/VerdorSales'
 import VendorEarning from '../components/Transaction/SalesTransaction/VendorEarning'
+import BusinessSetup from '../components/BusinessSetup/BusinessSetup'
+import Customer from '../components/BusinessSetup/Customer'
+import DeliveryMen from '../components/BusinessSetup/DeliveryMen'
+import DeliveryRestriction from '../components/BusinessSetup/DeliveryRestriction'
+import Invoice from '../components/BusinessSetup/Invoice'
+import Orders from '../components/BusinessSetup/Orders'
+import Products from '../components/BusinessSetup/Products'
+import Refunds from '../components/BusinessSetup/Refund'
+import ShippingMethod from '../components/BusinessSetup/ShippingMethod'
+import Vendors from '../components/BusinessSetup/Vendors'
+import WebsiteSetup from '../components/BusinessSetup/WebsiteSetup'
+import Attrs from '../components/ProductAttributeSetup/AttributeSwtup'
+import NewProductsPequsts from '../components/VendorProducts/NewProductsPequsts'
+import DeniedProducts from '../components/VendorProducts/DeniedProducts'
+import ApprovedProducts from '../components/VendorProducts/ApprovedProducts'
+import Coupon from '../components/OffersDeals/Coupon' 
+import Clearance from '../components/OffersDeals/Clearance' 
+import Dealoftheday from '../components/OffersDeals/Dealoftheday' 
+import Featrured from '../components/OffersDeals/Featrured' 
+import Flash from '../components/OffersDeals/Flash' 
 
 // import NotFound from './NotFound' WalletBonus;
 
@@ -85,8 +108,11 @@ export default function Index() {
             <Route path="/refunds/pending" element={<Pending2 />} />
             <Route path="/refunds/approved" element={<Approved />} />
             <Route path="/refunds/refunded" element={<Refunded />} /> 
-            <Route path="/refunds/rejected" element={<Rejected />} /> 
+            <Route path="/refunds/rejected" element={<Rejected />} />
             <Route path="/InHouseProducts/ProductList" element={<ProductList />} /> 
+            <Route path="/InHouseProducts/Bulkimport" element={<Bulkimport />} /> 
+            <Route path="/InHouseProducts/RequestRestockList" element={<RequestRestockList />} /> 
+            <Route path="/InHouseProducts/AddNewProduct" element={<AddNewProduct />} /> 
             <Route path="/Dashboard/content" element={<Dashboard />} />
             <Route path="/Category/Catrgory" element={<Category />} />
             <Route path="/ProductGallery/ProductGallery" element={<ProductGallery />} />
@@ -128,7 +154,27 @@ export default function Index() {
             <Route path='/Transaction/SalesTransaction/VerdorSales' element={<VerdorSales/>}/>
             <Route path='/Transaction/SalesTransaction/VendorEarning' element={<VendorEarning/>}/>
             <Route path='/EarningChar' element={<EarningChar/>}/>    
-            <Route path="/pages/NotFound" element={<NotFound />} />
+            <Route path='/EarningChar' element={<EarningChar/>}/>   
+            <Route path="/BusinessSetup/BusinessSetup" element={<BusinessSetup />} />
+            <Route path="/BusinessSetup/Customer" element={<Customer />} />
+            <Route path="/BusinessSetup/DeliveryMen" element={<DeliveryMen />} />
+            <Route path="/BusinessSetup/DeliveryRestriction" element={<DeliveryRestriction />} />
+            <Route path="/BusinessSetup/Invoice" element={<Invoice />} />
+            <Route path="/BusinessSetup/Orders" element={<Orders />} />
+            <Route path="/BusinessSetup/Products" element={<Products />} />
+            <Route path="/BusinessSetup/Refund" element={<Refunds />} />
+            <Route path="/BusinessSetup/ShippingMethod" element={<ShippingMethod />} />
+            <Route path="/BusinessSetup/Vendors" element={<Vendors />} />
+            <Route path="/BusinessSetup/WebsiteSetup" element={<WebsiteSetup />} />
+            <Route path="/ProductAttributeSetup/AttributeSwtup" element={<Attrs />} />
+            <Route path="/VendorProducts/NewProductsPequsts" element={<NewProductsPequsts />} />
+            <Route path="/VendorProducts/DeniedProducts" element={<DeniedProducts />} />
+            <Route path="/VendorProducts/ApprovedProducts" element={<ApprovedProducts />} />
+            <Route path="/OffersDeals/Coupon" element={<Coupon />} />
+            <Route path="/OffersDeals/Clearance" element={<Clearance />} />
+            <Route path="/OffersDeals/Dealoftheday" element={<Dealoftheday />} />
+            <Route path="/OffersDeals/Featrured" element={<Featrured />} />
+            <Route path="/OffersDeals/Flash" element={<Flash />} />
           </Routes>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Default from "../../../../public/default.png";
 
 export default function InhouseSales() {
   const [category, setCategory] = useState("All");
@@ -30,7 +31,7 @@ export default function InhouseSales() {
       {/* Table */}
       <div className="bg-white p-6 rounded shadow">
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm text-left">
+          <table className="min-w-full text-sm text-left h-100">
             <thead className="bg-gray-100">
               <tr>
                 <th className="px-4 py-2 font-semibold text-black">SL</th>
@@ -39,28 +40,13 @@ export default function InhouseSales() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="px-4 py-2">1</td>
-                <td className="px-4 py-2">Product 1</td>
-                <td className="px-4 py-2">$0.00</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">2</td>
-                <td className="px-4 py-2">Product 2</td>
-                <td className="px-4 py-2">$0.00</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">3</td>
-                <td className="px-4 py-2">Product 3</td>
-                <td className="px-4 py-2">$0.00</td>
-              </tr>
               <tr className="text-center">
                 <td colSpan="3" className="px-4 py-4">
-                  <div className="flex justify-center items-center gap-2">
+                  <div className="flex flex-col justify-center items-center gap-2">
                     <img
-                      src="https://via.placeholder.com/50"
+                      src={Default}
                       alt="No data"
-                      className="w-8 h-8"
+                      className="w-40 h-35"
                     />
                     <span className="text-sm text-gray-500">No product found</span>
                   </div>
