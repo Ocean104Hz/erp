@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 
-export default function Clearance() {
+export default function Manage() {
   const [products, setProducts] = useState([]);
   const [showAddProductModal, setShowAddProductModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -54,13 +55,13 @@ export default function Clearance() {
       <div className="flex space-x-4 mb-6">
         <Link
           to="/OffersDeals/Clearance"
-          className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold"
+          className="px-4 py-2 rounded-full text-gray-600 font-semibold"
         >
           Manage Inhouse Offer
         </Link>
         <Link
           to="/OffersDeals/Manage"
-          className="px-4 py-2 rounded-full text-gray-600 font-semibold"
+          className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold"
         >
           Manage Vendor Offer
         </Link>
@@ -77,15 +78,15 @@ export default function Clearance() {
         <div className="bg-white p-4 rounded-md flex justify-between items-center">
           <div>
             <h2 className="font-semibold text-lg">
-              Active clearance sale offer?
+              Show Clearance Offer in Home Page
             </h2>
             <p className="text-sm text-gray-600">
-              Show your offer in the store details page in customer website and
-              apps
+              You can highlight all clearance offer products in home page to
+              increase customer reach
             </p>
           </div>
           <label className="relative inline-flex items-center cursor-pointer justify-between border border-gray-300 rounded-md p-2 w-80">
-            <p>Active Offer</p>
+            <p>Show Offer in home page</p>
             <input
               type="checkbox"
               defaultChecked={true}
@@ -98,95 +99,20 @@ export default function Clearance() {
 
       {/* Offer Logic Setup */}
       <div className="bg-white shadow-md rounded-md p-6">
-        <h2 className="text-xl font-semibold mb-4">Setup Offer Logics</h2>
+        <h2 className="text-xl font-semibold mb-4">Add Vendor</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Duration */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Duration
-            </label>
+          <p className="text-sm text-gray-600 border-b border-gray-300 pb-3 col-span-2">
+            Alongside with your in-house product , you can highlight vendor’s
+            product who has activate their clearance offer.
+          </p>
+
+          <div className="relative mb-4 mt-4 border border-gray-300 rounded-md justify-between col-span-2">
             <input
               type="text"
-              value="07/29/2025 12:00:00 AM - 07/29/2025 11:59:59 PM"
-              className="w-full p-2 border border-gray-300 rounded-md mt-1"
+              placeholder="Search menu"
+              className="w-full p-2 pl-10 rounded-md bg-white placeholder-gray-500 text-gray-900 focus:outline-none"
             />
-          </div>
-
-          {/* Discount Amount */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Discount Amount (%)
-            </label>
-            <input
-              type="number"
-              value="0"
-              className="w-full p-2 border border-gray-300 rounded-md mt-1"
-            />
-          </div>
-
-          {/* Discount Type */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Discount Type
-            </label>
-            <div className="flex items-center gap-4 w-full p-2 border border-gray-300 rounded-md mt-1">
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="discount_type"
-                  checked
-                  className="mr-2"
-                />
-                <span>Flat Discount</span>
-              </label>
-              <label className="flex items-center pl-50">
-                <input type="radio" name="discount_type" className="mr-2" />
-                <span>Product wise discount</span>
-              </label>
-            </div>
-          </div>
-
-          {/* Offer Active Time */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Offer Active Time
-            </label>
-            <div className="flex items-center gap-4 w-full p-2 border border-gray-300 rounded-md mt-1">
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  name="offer_active_time"
-                  checked
-                  className="mr-2"
-                />
-                <span>Always</span>
-              </label>
-              <label className="flex items-center pl-50">
-                <input type="radio" name="offer_active_time" className="mr-2" />
-                <span>Specific time in a day</span>
-              </label>
-            </div>
-          </div>
-
-          {/* Also show in home page */}
-          <div className="flex items-center gap-4 w-full p-2 border border-gray-300 rounded-md mt-1 justify-between">
-            <span className="text-sm">Also show in home page</span>
-            <input type="checkbox" className="form-checkbox" />
-          </div>
-
-          <div className="justify-end content-end text-end gap-4">
-            <button
-              type="reset"
-              className="py-2 px-4 bg-gray-300 text-black rounded-md"
-            >
-              Reset
-            </button>
-            <button
-              type="submit"
-              className="py-2 px-4 bg-blue-600 text-white rounded-md ml-3"
-            >
-              Save
-            </button>
+            <FaSearch className="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500 text-sm" />
           </div>
         </div>
       </div>
@@ -194,13 +120,7 @@ export default function Clearance() {
       {/* Product List Section */}
       <div className="p-6 bg-white shadow-md rounded-md mt-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">Product List</h1>
-          <button
-            onClick={handleAddProduct}
-            className="px-4 py-2 bg-blue-600 text-white rounded"
-          >
-            + Add Product
-          </button>
+          <h1 className="text-2xl font-bold">Vendor List</h1>
         </div>
 
         {/* Empty State */}
@@ -213,12 +133,6 @@ export default function Clearance() {
               Add product show in the clearance offer section in customer app
               and website
             </p>
-            <button
-              onClick={handleAddProduct}
-              className="text-blue-600 hover:underline"
-            >
-              + Add Product
-            </button>
           </div>
         </div>
       </div>

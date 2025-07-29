@@ -3,7 +3,7 @@ import { PiConfettiLight } from "react-icons/pi";
 export default function Options(){
     return(
         <>
-        <div className="flex items-center justify-between p-2 mt-6">
+        <div className="flex items-center justify-between p-2 mb-2">
             <div className="flex gap-2 items-center">
                 <PiConfettiLight className="text-2xl text-red-500 " />
                 

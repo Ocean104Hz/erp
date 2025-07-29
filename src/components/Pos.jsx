@@ -8,7 +8,7 @@ export default function Pos(){
                 <h2 className="text-lg font-semibold mb-4">Product Section</h2>
 
                 <div className="flex items-center gap-4 mb-4">
-                <select className="border rounded p-2">
+                <select className="border rounded p-2 ">
                     <option>All categories</option>
                 </select>
                 <div className="flex-1 relative">
@@ -39,7 +39,7 @@ export default function Pos(){
                     <select className="border border-gray-300 rounded-md p-2 w-full col-span-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ease-in-out">
                         <option className="bg-white text-gray-900 hover:bg-gray-100">Walking customer</option>
                     </select>
-                    <button className="bg-green-600 text-white px-4 py-2 rounded text-sm">Add New Customer</button>
+                    <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm">Add New Customer</button>
                 </div>
 
                 <div className="grid drid-cols-4 md:grid-cols-4 gap-4 mb-4">
@@ -48,8 +48,8 @@ export default function Pos(){
                     <option className="bg-white text-gray-900 hover:bg-gray-100">walking-customer-262</option>
                     <option className="bg-white text-gray-900 hover:bg-gray-100">walking-customer-263</option>
                 </select>
-                <button className="bg-gray-200 px-4 py-2 rounded text-sm">Clear Cart</button>
-                <button className="bg-blue-700 text-white px-4 py-2 rounded text-sm">New Order</button>
+                <button className="bg-gray-200 px-4 py-2 rounded text-sm hover:bg-gray-300">Clear Cart</button>
+                <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">New Order</button>
                 </div>
 
                 {/* Item Table */}

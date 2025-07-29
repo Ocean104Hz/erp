@@ -5,6 +5,7 @@ import { FaFileExcel } from "react-icons/fa";
 import { MdRunningWithErrors } from "react-icons/md";
 import { GrDocumentPdf } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import EarningChar from "../EarningChar";
 
 export default function Report() {
     return (
@@ -20,12 +21,12 @@ export default function Report() {
                 <Link to="/Transactions/Refund" className="px-4 py-2 rounded-full text-gray-600 font-semibold">Refund Transactions</Link>
             </div>
 
-            <div className="p-4 mt-5 shadow-md border rounded-md flex flex-col gap-4">
+            <div className="p-4 mt-5 shadow-md border border-gray-300 rounded-md flex flex-col gap-4 bg-white">
                 <div className="flex">
                     <div className="w-1/4">
                         <h1 className="font-bold text-lg">Filter Data</h1>
                         <label className="text-gray-500">Select status</label>
-                        <select className="mt-2 w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <select className="mt-2 w-full border rounded border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
                             <option disabled selected>All status</option>
                             <option>1</option>
                             <option>2</option>
@@ -35,7 +36,7 @@ export default function Report() {
 
                     <div className="w-1/4 ml-2 mt-7">
                         <label className="text-gray-500">Select seller</label>
-                        <select className="mt-2 w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <select className="mt-2 w-full border rounded border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
                             <option disabled selected>All</option>
                             <option>1</option>
                             <option>2</option>
@@ -45,7 +46,7 @@ export default function Report() {
 
                     <div className="w-1/4 ml-2 mt-7">
                         <label className="text-gray-500">Select customer</label>
-                        <select className="mt-2 w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <select className="mt-2 w-full border rounded border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
                             <option disabled selected>All customer</option>
                             <option>1</option>
                             <option>2</option>
@@ -55,7 +56,7 @@ export default function Report() {
 
                     <div className="w-1/4 ml-2 mt-7">
                         <label className="text-gray-500">Select date</label>
-                        <select className="mt-2 w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <select className="mt-2 w-full border rounded border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
                             <option disabled selected>This Year</option>
                             <option>1</option>
                             <option>2</option>
@@ -77,7 +78,7 @@ export default function Report() {
                 {/* LEFT PANEL - Summary Cards */}
                 <div className="flex flex-col gap-4 w-full lg:w-1/4">
                     {/* Total Orders */}
-                    <div className="p-4 shadow-md border rounded-md">
+                    <div className="p-4 shadow-md border border-gray-300 rounded-md bg-white">
                         <div className="flex items-center gap-3">
                             <PiTrolleyDuotone className="text-4xl" />
                             <div>
@@ -98,7 +99,7 @@ export default function Report() {
                     </div>
 
                     {/* Total Products */}
-                    <div className="p-4 shadow-md border rounded-md">
+                    <div className="p-4 shadow-md border border-gray-300 rounded-md bg-white">
                         <div className="flex items-center gap-3">
                             <PiTrolleyDuotone className="text-4xl" />
                             <div>
@@ -119,7 +120,7 @@ export default function Report() {
                     </div>
 
                     {/* Total Store */}
-                    <div className="pb-10 p-4 shadow-md border rounded-md">
+                    <div className="pb-10 p-4 shadow-md border border-gray-300 rounded-md bg-white">
                         <div className="flex items-center gap-3">
                             <PiTrolleyDuotone className="text-4xl" />
                             <div>
@@ -131,16 +132,16 @@ export default function Report() {
                 </div>
 
                 {/* CENTER PANEL - Order Statistics Chart */}
-                <div className="flex-1 w-1/3 p-6 shadow-md border rounded-md">
+                <div className="flex-1 w-1/3 p-6 shadow-md border border-gray-300 rounded-md bg-white">
                     <h2 className="text-md font-semibold mb-2">Order Statistics</h2>
                     {/* กราฟจำลอง */}
-                    <div className="h-64 bg-gray-50 border-dashed border-2 border-gray-300 flex items-center justify-center text-gray-400">
-                        <p>Chart Placeholder</p>
+                    <div className="h-95 bg-white border-gray-300 flex items-center justify-center text-gray-400">
+                        <EarningChar/>
                     </div>
                 </div>
 
                 {/* RIGHT PANEL - Payment Statistics */}
-                <div className="w-full md:w-1/4 p-4 shadow-md border rounded-md">
+                <div className="w-full md:w-1/4 p-4 shadow-md border border-gray-300 rounded-md bg-white">
                     <h2 className="text-sm font-semibold mb-2 text-gray-600">Payment Statistics</h2>
 
                     <div className="text-center mt-10">
@@ -172,7 +173,7 @@ export default function Report() {
                 </div>
             </div>
 
-            <div className="p-4 mt-5 shadow-md border rounded-md flex flex-col gap-4">
+            <div className="p-4 mt-5 shadow-md border border-gray-300 rounded-md flex flex-col gap-4 bg-white">
                 <div className="flex justify-between items-center">
                     {/* ซ้าย */}
                     <div className="flex items-center space-x-2">
@@ -183,7 +184,7 @@ export default function Report() {
                     {/* ขวา */}
                     <div className="flex items-center justify-end space-x-4">
                         {/* Search Box */}
-                        <div className="flex items-center border rounded-md overflow-hidden">
+                        <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
                             <input
                                 type="text"
                                 placeholder="Search by orders id"
@@ -209,7 +210,7 @@ export default function Report() {
 
                 <div className="overflow-x-auto">
                     <table className="mb-4 min-w-full table-auto">
-                        <thead className="bg-gray-100">
+                        <thead className="bg-white">
                             <tr>
                                 <th className="px-10 py-4 font-semibold text-black whitespace-nowrap">SL</th>
                                 <th className="px-10 py-2 font-semibold text-black whitespace-nowrap">Order Id</th>

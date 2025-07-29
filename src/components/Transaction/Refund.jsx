@@ -18,7 +18,7 @@ export default function Refund() {
                 <Link to="/Transactions/Refund" className="px-4 py-2 rounded-full bg-blue-700 text-white font-semibold">Refund Transactions</Link>
             </div>
 
-            <div className="p-4 mt-5 shadow-md border rounded-md flex flex-col gap-4">
+            <div className="p-4 mt-5 shadow-md border border-gray-300 rounded-md flex flex-col gap-4 bg-white" >
                 <div className="flex justify-between items-center">
                     {/* ซ้าย */}
                     <div className="flex items-center space-x-2">
@@ -29,7 +29,7 @@ export default function Refund() {
                     {/* ขวา */}
                     <div className="flex items-center justify-end space-x-4">
                         {/* Search Box */}
-                        <div className="flex items-center border rounded-md">
+                        <div className="flex items-center border border-gray-300 rounded-md">
                             <input
                                 type="text"
                                 placeholder="Search by orders id or refund id"
@@ -40,7 +40,7 @@ export default function Refund() {
                             </button>
                         </div>
 
-                        <select className="w-48 border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <select className="w-48 border rounded border-gray-300 px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
                             <option disabled selected>All</option>
                             <option>1</option>
                             <option>2</option>
@@ -61,7 +61,7 @@ export default function Refund() {
 
                 <div className="overflow-x-auto">
                     <table className="mb-4 min-w-full table-auto">
-                        <thead className="bg-gray-100">
+                        <thead className="bg-white">
                             <tr>
                                 <th className="px-10 py-4 font-semibold text-black whitespace-nowrap">SL</th>
                                 <th className="px-10 py-2 font-semibold text-black whitespace-nowrap">Product</th>

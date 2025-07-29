@@ -5,6 +5,7 @@ import { FaFileExcel } from "react-icons/fa";
 import { MdRunningWithErrors } from "react-icons/md";
 import { GrDocumentPdf } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import EarningChar from "../EarningChar";
 
 
 export default function Transactions() {
@@ -21,12 +22,12 @@ export default function Transactions() {
                 <Link to="/Transactions/Refund" className="px-4 py-2 rounded-full text-gray-600 font-semibold">Refund Transactions</Link>
             </div>
 
-            <div className="p-4 mt-5 shadow-md border rounded-md gap-4">
+            <div className="p-4 mt-5 shadow-md border border-gray-200 rounded-md gap-4 bg-white">
                 <div className="flex items-end gap-4">
                     <div className="w-1/4">
                         <h1 className="font-bold text-lg">Filter Data</h1>
                         <label className="text-gray-500">Select Date</label>
-                        <select className="mt-2 w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <select className="mt-2 w-full border rounded border border-gray-400 px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
                             <option disabled selected>This year</option>
                             <option>1</option>
                             <option>2</option>
@@ -47,7 +48,7 @@ export default function Transactions() {
                 {/* LEFT PANEL - Summary Cards */}
                 <div className="flex flex-col gap-4 w-full lg:w-1/3">
                     {/* Total Expense */}
-                    <div className="pb-20 p-4 shadow-md border rounded-md">
+                    <div className="pb-20 p-4 shadow-md border border border-gray-200 rounded-md bg-white">
                         <div className="flex items-center gap-3">
                             <PiTrolleyDuotone className="text-4xl" />
                             <div>
@@ -58,7 +59,7 @@ export default function Transactions() {
                     </div>
 
                     {/* Free Delivery */}
-                    <div className="pb-20 p-4 shadow-md border rounded-md">
+                    <div className="pb-20 p-4 shadow-md border border border-gray-200 rounded-md bg-white">
                         <div className="flex items-center gap-3">
                             <PiTrolleyDuotone className="text-4xl" />
                             <div>
@@ -69,7 +70,7 @@ export default function Transactions() {
                     </div>
 
                     {/* Coupon Discount */}
-                    <div className="pb-20 p-4 shadow-md border rounded-md">
+                    <div className="pb-20 p-4 shadow-md border border border-gray-200 rounded-md bg-white">
                         <div className="flex items-center gap-3">
                             <PiTrolleyDuotone className="text-4xl" />
                             <div>
@@ -81,16 +82,16 @@ export default function Transactions() {
                 </div>
 
                 {/* RIGHT PANEL */}
-                <div className="flex-1 w-2/3 p-6 shadow-md border rounded-md">
+                <div className="flex-1 w-2/3 p-6 shadow-md border border-gray-200 rounded-md bg-white">
                     <h2 className="text-md font-semibold mb-2">Order Statistics</h2>
                     {/* กราฟจำลอง */}
-                    <div className="h-64 bg-gray-50 border-dashed border-2 border-gray-300 flex items-center justify-center text-gray-400">
-                        <p>Chart Placeholder</p>
+                    <div className="h-95 bg-white border-gray-300 flex items-center justify-center text-gray-400">
+                        <EarningChar/>
                     </div>
                 </div>
             </div>
 
-            <div className="p-4 mt-5 shadow-md border rounded-md flex flex-col gap-4">
+            <div className="p-4 mt-5 shadow-md border border border-gray-200 rounded-md flex flex-col gap-4 bg-white">
                 <div className="flex justify-between items-center">
                     {/* ซ้าย */}
                     <div className="flex items-center space-x-2">
@@ -101,7 +102,7 @@ export default function Transactions() {
                     {/* ขวา */}
                     <div className="flex items-center justify-end space-x-4">
                         {/* Search Box */}
-                        <div className="flex items-center border rounded-md overflow-hidden">
+                        <div className="flex items-center border border border-gray-400 rounded-md overflow-hidden">
                             <input
                                 type="text"
                                 placeholder="Search by Order ID or Transaction ID"
@@ -125,9 +126,9 @@ export default function Transactions() {
                     </div>
                 </div>
 
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto ">
                     <table className="mb-4 min-w-full table-auto">
-                        <thead className="bg-gray-100">
+                        <thead className="bg-white">
                             <tr>
                                 <th className="px-10 py-4 font-semibold text-black whitespace-nowrap">SL</th>
                                 <th className="px-10 py-2 font-semibold text-black whitespace-nowrap">Order Id</th>

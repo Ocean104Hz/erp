@@ -83,6 +83,8 @@ import Clearance from '../components/OffersDeals/Clearance'
 import Dealoftheday from '../components/OffersDeals/Dealoftheday' 
 import Featrured from '../components/OffersDeals/Featrured' 
 import Flash from '../components/OffersDeals/Flash' 
+import Manage from '../components/OffersDeals/Manage'
+import Priority from '../components/OffersDeals/Priority'
 
 // import NotFound from './NotFound' WalletBonus;
 
@@ -175,6 +177,8 @@ export default function Index() {
             <Route path="/OffersDeals/Dealoftheday" element={<Dealoftheday />} />
             <Route path="/OffersDeals/Featrured" element={<Featrured />} />
             <Route path="/OffersDeals/Flash" element={<Flash />} />
+            <Route path="/OffersDeals/Manage" element={<Manage />} />
+            <Route path="/OffersDeals/Priority" element={<Priority />} />
           </Routes>
         </div>
       </div>
