@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,8 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
+} from "chart.js";
+import { Line } from "react-chartjs-2";
 
 // Register Chart.js components
 ChartJS.register(
@@ -22,88 +22,79 @@ ChartJS.register(
   Legend
 );
 
-interface LineChartProps {
-  data: {
-    labels: string[];
-    datasets: {
-      label: string;
-      data: number[];
-      borderColor: string;
-      backgroundColor: string;
-      pointRadius?: number;
-      pointHoverRadius?: number;
-      tension?: number;
-    }[];
-  };
-  options?: any;
-}
-
-const LineChart: React.FC<LineChartProps> = ({ data, options }) => {
+export default function LineChart({ data, options }) {
   const defaultOptions = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
         display: true,
-        position: 'top' as const,
+        position: "top",
         labels: {
           usePointStyle: true,
+          color: "#333",
+          font: {
+            size: 12,
+          },
         },
       },
       title: {
         display: false,
       },
       tooltip: {
-        enabled: false,
+        enabled: true,
+        callbacks: {
+          label: (context) => `฿${context.parsed.y.toLocaleString()}`,
+        },
       },
     },
     scales: {
       x: {
         grid: {
           display: true,
-          color: 'rgba(200, 200, 200, 0.2)',
+          color: "rgba(200, 200, 200, 0.2)",
         },
         ticks: {
-          color: '#555',
-        },
-        min: 'Jan',
-        max: 'Dec',
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      },
-      y: {
-        grid: {
-          display: true,
-          color: 'rgba(200, 200, 200, 0.2)',
-        },
-        ticks: {
-          beginAtZero: false,
-          stepSize: 1,
-          color: '#555',
-          // 💡 ส่วนนี้คือการแก้ไข: เพิ่มสัญลักษณ์บาท (฿)
-          callback: function(value: string | number) {
-            return '฿' + value; // เพิ่มสัญลักษณ์ ฿ นำหน้าค่า
+          color: "#555",
+          font: {
+            size: 12,
           },
         },
-        min: 0,
-        max: 100,
+      },
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: true,
+          color: "rgba(200, 200, 200, 0.2)",
+        },
+        ticks: {
+          color: "#555",
+          font: {
+            size: 12,
+          },
+          callback: function (value) {
+            return "฿" + value.toLocaleString();
+          },
+        },
       },
     },
     elements: {
       point: {
-        radius: 0,
-        hoverRadius: 5,
+        radius: 4,
+        hoverRadius: 6,
+        backgroundColor: "#fff",
+        borderWidth: 2,
       },
       line: {
         borderWidth: 2,
+        tension: 0.4, // Smooth curve
       },
     },
   };
 
   return (
-    <div className="w-full h-80 bg-white p-4 rounded-lg shadow-md">
+    <div className="w-full h-80 bg-white">
       <Line data={data} options={options || defaultOptions} />
     </div>
   );
-};
-
-export default LineChart;
+}

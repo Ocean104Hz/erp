@@ -90,7 +90,7 @@ const DoughnutChart: React.FC<DoughnutChartProps> = ({ data, centerText, options
   ChartJS.register(centerTextPlugin);
 
   return (
-    <div className="h-80 bg-white rounded-lg shadow-md p-4">
+    <div className="h-80 bg-white p-4">
       <Doughnut data={data} options={options || defaultOptions} />
     </div>
   );

@@ -65,20 +65,20 @@ export default function Barnav() {
       section: "offers",
       subMenu: [{ label: "Categories", path: "/Category/Catrgory" }],
     },
-    {
-      label: "Brands",
-      icon: <MdLocalOffer />,
-      section: "notifications",
-      subMenu: [
-        { label: "Add new", path: "/BrandSetup/BrandSetup" },
-        { label: "List", path: "/BrandSetup/BrandList" },
-      ],
-    },
-    {
-      label: "Product Attribute Setup",
-      icon: <FaTicketAlt />,
-      path: "/ProductAttributeSetup/AttributeSwtup",
-    },
+    // {
+    //   label: "Brands",
+    //   icon: <MdLocalOffer />,
+    //   section: "notifications",
+    //   subMenu: [
+    //     { label: "Add new", path: "/BrandSetup/BrandSetup" },
+    //     { label: "List", path: "/BrandSetup/BrandList" },
+    //   ],
+    // },
+    // {
+    //   label: "Product Attribute Setup",
+    //   icon: <FaTicketAlt />,
+    //   path: "/ProductAttributeSetup/AttributeSwtup",
+    // },
     {
       label: "In House Products",
       icon: <MdLocalOffer />,
@@ -100,23 +100,23 @@ export default function Barnav() {
         { label: "Denied Product", path: "/VendorProducts/ApprovedProducts" },
       ],
     },
-    {
-      label: "Product gallery",
-      icon: <FaTicketAlt />,
-      path: "/ProductGallery/ProductGallery",
-    },
-    {
-      label: "Offers & Deals",
-      icon: <MdLocalOffer />,
-      section: "offers",
-      subMenu: [
-        { label: "Coupon", path: "/OffersDeals/Coupon" },
-        { label: "Flash Deals", path: "/OffersDeals/Flash" },
-        { label: "Deal of the day", path: "/OffersDeals/Dealoftheday" },
-        { label: "Featured Deal", path: "/OffersDeals/Featrured" },
-        { label: "Clearance Sale", path: "/OffersDeals/Clearance" },
-      ],
-    },
+    // {
+    //   label: "Product gallery",
+    //   icon: <FaTicketAlt />,
+    //   path: "/ProductGallery/ProductGallery",
+    // },
+    // {
+    //   label: "Offers & Deals",
+    //   icon: <MdLocalOffer />,
+    //   section: "offers",
+    //   subMenu: [
+    //     { label: "Coupon", path: "/OffersDeals/Coupon" },
+    //     { label: "Flash Deals", path: "/OffersDeals/Flash" },
+    //     { label: "Deal of the day", path: "/OffersDeals/Dealoftheday" },
+    //     { label: "Featured Deal", path: "/OffersDeals/Featrured" },
+    //     { label: "Clearance Sale", path: "/OffersDeals/Clearance" },
+    //   ],
+    // },
     {
       label: "Sales & Transaction Report",
       icon: <FaDollarSign />,
@@ -148,26 +148,26 @@ export default function Barnav() {
       icon: <FaTicketAlt />,
       path: "/InhouseShop/ShopSetting",
     },
-    {
-      label: "SEO Settings",
-      icon: <FaTicketAlt />,
-      path: "/SEOSettings/WebmasterTools",
-    },
-    {
-      label: "Priority Setup",
-      icon: <FaTicketAlt />,
-      path: "/PrioritySetup/PrioritySetup",
-    },
-    {
-      label: "Pages & Media",
-      icon: <FaDollarSign />,
-      section: "pagesMedia",
-      subMenu: [
-        { label: "Bussiness Pages", path: "/Pages&Media/PageMediaSetup" },
-        { label: "Social Media Links", path: "/Pages&Media/SocialMediaLinks" },
-        { label: "Vendor Rogistration", path: "/Pages&Media/Voerdor/Header" },
-      ],
-    },
+    // {
+    //   label: "SEO Settings",
+    //   icon: <FaTicketAlt />,
+    //   path: "/SEOSettings/WebmasterTools",
+    // },
+    // {
+    //   label: "Priority Setup",
+    //   icon: <FaTicketAlt />,
+    //   path: "/PrioritySetup/PrioritySetup",
+    // },
+    // {
+    //   label: "Pages & Media",
+    //   icon: <FaDollarSign />,
+    //   section: "pagesMedia",
+    //   subMenu: [
+    //     { label: "Bussiness Pages", path: "/Pages&Media/PageMediaSetup" },
+    //     { label: "Social Media Links", path: "/Pages&Media/SocialMediaLinks" },
+    //     { label: "Vendor Rogistration", path: "/Pages&Media/Voerdor/Header" },
+    //   ],
+    // },
   ];
 
   return (
